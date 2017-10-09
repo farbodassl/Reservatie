@@ -12,11 +12,10 @@ package reservaties;
 public class Lid {
     private String naam;
     private String telefoon;
-    private double lidgeld;
+    private static double lidgeld = 25;
     
     public Lid(String naam,String telefoon){
         this.naam = naam;
         this.telefoon = telefoon;
-        lidgeld = 25;
     }
 }

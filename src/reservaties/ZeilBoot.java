@@ -11,20 +11,26 @@ package reservaties;
  */
 public class ZeilBoot extends Boot{
     private boolean gps;
+    private static double verhuurprijs = 50;
+    private double toeslag = 0;
 
-    public ZeilBoot(double basisprijs, String naam, boolean radar) {
+    public ZeilBoot(double basisprijs, String naam, boolean radar,boolean gps) {
         super(basisprijs, naam, radar);
+        this.gps = gps;
+        basisprijs = verhuurprijs;
+        if(gps){
+            toeslag+=0.03;
+        }
+        if(radar){
+            toeslag+=0.05;
+        }
     }
     
-    public double berekentPrijs(Boot boot){
+    public double berekenPrijs(Boot boot){
         double prijs;
-        if(gps){
-            prijs = boot.getBasisprijs() * 1.03;
-        }
-       else
-        {
-            prijs = boot.getBasisprijs();
-        }
+        prijs = boot.getBasisprijs()* (1+toeslag);
         return prijs;
     }
+    
+   
 }

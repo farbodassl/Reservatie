@@ -10,7 +10,7 @@ package reservaties;
  * @author hamid
  */
 public class Reservatie {
-    private int aantalUren;
+    private double aantalUren;
     private Boot boot;
     private Lid lid;
     /**
@@ -20,4 +20,14 @@ public class Reservatie {
         // TODO code application logic here
     }
     
+    public Reservatie(double aantalUren,Boot boot,Lid lid){
+        this.aantalUren = aantalUren;
+        this.boot = boot;
+        this.lid = lid;
+    }
+    
+    public double berekenPrijs(Boot boot){
+        double prijs = boot.berekenPrijs() * aantalUren;
+        
+    }
 }

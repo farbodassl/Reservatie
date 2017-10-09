@@ -20,12 +20,12 @@ public class Boot {
         this.radar = radar;
     }
     
-    public double berekenPrijs(Boot boot){
+    public double berekenPrijs(){
         return 0.0;
     }
     
     public double getBasisprijs(){
         return basisprijs;
     }
-    hello
+    
 }
